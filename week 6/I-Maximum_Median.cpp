@@ -3,24 +3,20 @@ using namespace std;
 #define ll long long 
 
 int main(){
-    int t;
-    cin >> t;
-
-    while(t--){
-        int n, k;
-        cin >> n >> k;
     
-        vector<int> arr(n);
+        ll n, k;
+        cin >> n >> k;
+        vector<ll> arr(n);
         
-        for(int i=0; i<n; i++){
+        for(ll i=0; i<n; i++){
             cin >> arr[i];
         }
 
         sort(arr.begin(), arr.end());
 
         auto ok = [&](ll mid){
-            ll count=0;
-            for(int i=n/2; i<n; i++){
+            ll count = 0;
+            for(ll i=n/2; i<n; i++){
                 if(arr[i]<mid){
                     count += mid-arr[i];
                 }
@@ -29,7 +25,7 @@ int main(){
         };
 
         ll l=1, r=2e9;
-        ll mid, res=0;
+        ll mid, res = 0;
         
         while(l<=r){
             mid = (l+r)/2;
@@ -43,5 +39,5 @@ int main(){
         }
 
         cout << res << endl;
-    }
+    
 }
